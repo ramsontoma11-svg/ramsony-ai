@@ -4,17 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#050812">
-<title>RAMSONY AI® — Creative Studio</title>
-<link rel="manifest" href="manifest.webmanifest">
+<title>RAMSONY AI® — Your Voice. Your Music. Your World.</title>
 <style>
 :root{--bg:#050812;--panel:#0b1425;--panel2:#101d33;--blue:#168cff;--cyan:#35d9ff;--text:#eef6ff;--muted:#9aadc6;--line:#1b3555}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#10264a 0,#050812 48%);color:var(--text);font:16px/1.5 system-ui,Arial,sans-serif}
-header{padding:22px 18px 16px;text-align:center;border-bottom:1px solid var(--line);background:#050812cc;position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}
+header{padding:20px 16px 14px;text-align:center;border-bottom:1px solid var(--line);background:#050812ed;position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}
 .brand{font-weight:900;letter-spacing:2px;font-size:clamp(25px,5vw,38px);text-shadow:0 0 22px #168cff88}.brand span{color:var(--cyan)}
-header p{margin:4px 0 0;color:var(--muted);font-size:13px}
-nav{display:flex;gap:8px;overflow:auto;padding:12px;max-width:1100px;margin:auto}
-nav button,.btn{border:1px solid #245080;background:#0b1b32;color:var(--text);border-radius:12px;padding:10px 14px;font-weight:700;cursor:pointer;white-space:nowrap}
-nav button.active,.btn.primary{background:linear-gradient(100deg,#0875e8,#08b9e8);border-color:#39bfff;color:white}
+header p{margin:4px 0 0;color:var(--muted);font-size:12px;letter-spacing:1px}
+nav{display:flex;gap:8px;overflow:auto;padding:12px;max-width:1150px;margin:auto}
+button,.btn{border:1px solid #245080;background:#0b1b32;color:var(--text);border-radius:12px;padding:10px 14px;font-weight:700;cursor:pointer;white-space:nowrap}
+button.active,.btn.primary{background:linear-gradient(100deg,#0875e8,#08b9e8);border-color:#39bfff;color:white}
+button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
 main{max-width:1100px;margin:auto;padding:14px}
 .hero{padding:24px 20px;border:1px solid #17477a;border-radius:20px;background:linear-gradient(130deg,#0b1c35,#07101f 70%);box-shadow:0 12px 45px #0008}
 h1{font-size:clamp(25px,5vw,38px);line-height:1.15;margin:0 0 8px}.glow{color:var(--cyan)}.muted{color:var(--muted)}
@@ -26,7 +26,7 @@ label{display:block;font-weight:700;margin:12px 0 6px}input,textarea,select{widt
 textarea{min-height:100px;resize:vertical}input[type=file]{padding:9px}
 .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
 .actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:13px}
-.preview{margin-top:14px;padding:12px;border:1px dashed #2a5c8c;border-radius:14px;background:#050d19;min-height:70px}
+.preview{margin-top:14px;padding:12px;border:1px dashed #2a5c8c;border-radius:14px;background:#050d19;min-height:65px}
 img.preview-img,video,audio{max-width:100%;border-radius:12px;margin-top:8px}
 .photo-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .photo-pair img{width:100%;aspect-ratio:4/3;object-fit:cover;background:#101d33;border-radius:12px}
@@ -34,115 +34,173 @@ img.preview-img,video,audio{max-width:100%;border-radius:12px;margin-top:8px}
 #transitionStage img{position:absolute;width:100%;height:100%;object-fit:contain;inset:0;opacity:0;transition:opacity 1s}
 #transitionStage img.show{opacity:1}
 .small{font-size:12px;color:var(--muted)}.status{color:#83e6ff;margin-top:8px;min-height:24px}
+.notice{border:1px solid #31577d;background:#09182b;padding:12px;border-radius:12px;color:#c8e7ff;font-size:13px;margin-top:12px}
 footer{text-align:center;color:var(--muted);padding:30px 12px;font-size:12px}
-hr{border:0;border-top:1px solid var(--line);margin:18px 0}
 @media(max-width:520px){header{position:static}.photo-pair{grid-template-columns:1fr 1fr}main{padding:10px}}
 </style>
 </head>
 <body>
-<header><div class="brand">RAMSONY <span>AI®</span></div><p>YOUR VOICE. YOUR IDEAS. YOUR CREATIVE STUDIO.</p></header>
+<header>
+  <div class="brand">RAMSONY <span>AI®</span></div>
+  <p>YOUR VOICE. YOUR MUSIC. YOUR WORLD.</p>
+</header>
 <nav aria-label="Studio sections">
-<button class="active" data-tab="home">Home</button><button data-tab="assistant">Voice AI</button><button data-tab="music">Music</button><button data-tab="video">Video Studio</button><button data-tab="photos">Two-photo video</button><button data-tab="images">Image ideas</button><button data-tab="notes">Notebook</button>
+  <button class="active" data-tab="home">Home</button>
+  <button data-tab="assistant">Voice AI</button>
+  <button data-tab="music">Music</button>
+  <button data-tab="video">Video Studio</button>
+  <button data-tab="photos">Two-photo video</button>
+  <button data-tab="images">Image ideas</button>
+  <button data-tab="notes">Notebook</button>
+  <button data-tab="account">Account & sharing</button>
 </nav>
 <main>
 <div class="hero">
-<h1>Make something <span class="glow">extraordinary.</span></h1>
-<p class="muted">A voice-first creative space for songs, videos, images and ideas.</p>
-<div class="actions"><button class="btn primary" data-go="assistant">Talk to RAMSONY</button><button class="btn" data-go="photos">Create a two-photo video</button></div>
+  <h1>Make something <span class="glow">extraordinary.</span></h1>
+  <p class="muted">A voice-first creative space for songs, videos, images and ideas.</p>
+  <div class="actions">
+    <button class="btn primary" data-go="assistant">Talk to RAMSONY</button>
+    <button class="btn" data-go="music">Create a song</button>
+    <button class="btn" data-go="photos">Create a two-photo video</button>
+  </div>
 </div>
+
 <section id="home" class="tool active">
-<div class="grid">
-<div class="card"><h3>🎙️ Voice AI</h3><p>Speak or type your ideas. Dictation works where your browser supports it.</p><button class="btn" data-go="assistant">Open Voice AI</button></div>
-<div class="card"><h3>🎵 Music Studio</h3><p>Write lyrics, add a music prompt, and preview audio files you already have.</p><button class="btn" data-go="music">Open Music</button></div>
-<div class="card"><h3>🎬 Video Studio</h3><p>Preview your own video and keep a brief for an AI video service.</p><button class="btn" data-go="video">Open Video</button></div>
-<div class="card"><h3>🖼️ Two-photo video</h3><p>Choose two photos and preview a simple transition slideshow.</p><button class="btn" data-go="photos">Open Two-photo Video</button></div>
-<div class="card"><h3>✨ Image ideas</h3><p>Write a prompt for cover art, posters, logos and visual concepts.</p><button class="btn" data-go="images">Open Image Ideas</button></div>
-<div class="card"><h3>📓 Notebook</h3><p>Save notes on this device in this browser.</p><button class="btn" data-go="notes">Open Notebook</button></div>
-</div>
-<p class="small">Current version: creative workspace and local previews. Real AI generation requires secure service connections and is not active yet.</p>
+  <div class="grid">
+    <div class="card"><h3>🎙️ Voice AI</h3><p>Speak or type an idea using voice dictation where supported.</p><button class="btn" data-go="assistant">Open Voice AI</button></div>
+    <div class="card"><h3>🎵 Music Studio</h3><p>Build lyrics, a music style prompt, and save or share your draft.</p><button class="btn" data-go="music">Open Music</button></div>
+    <div class="card"><h3>🎬 Video Studio</h3><p>Preview a video and write an editing or generation brief.</p><button class="btn" data-go="video">Open Video</button></div>
+    <div class="card"><h3>🖼️ Two-photo video</h3><p>Choose two photos and preview a simple transition slideshow.</p><button class="btn" data-go="photos">Open Two-photo Video</button></div>
+    <div class="card"><h3>✨ Image ideas</h3><p>Prepare prompts for cover art, posters, logos and visual concepts.</p><button class="btn" data-go="images">Open Image Ideas</button></div>
+    <div class="card"><h3>📓 Notebook</h3><p>Save notes in this browser on this device.</p><button class="btn" data-go="notes">Open Notebook</button></div>
+    <div class="card"><h3>🔐 Account & sharing</h3><p>Set a display name and choose a draft visibility label.</p><button class="btn" data-go="account">Open Account</button></div>
+  </div>
+  <div class="notice">This is the first upgraded front-end version. Real AI generation, secure accounts, cloud storage and public publishing still need secure server services before they can work.</div>
 </section>
 
 <section id="assistant" class="tool panel">
-<h2>🎙️ Talk to RAMSONY</h2><p class="muted">Type a message or use voice dictation to put your words in the box.</p>
-<label for="chatInput">Your message</label><textarea id="chatInput" placeholder="Tell RAMSONY what you want help with..."></textarea>
-<div class="actions"><button class="btn primary" id="dictate">🎙️ Start voice typing</button><button class="btn" id="copyChat">Copy text</button></div><div id="voiceStatus" class="status" aria-live="polite"></div>
-<p class="small">This starter version does not send messages to an AI service yet.</p>
+  <h2>🎙️ Talk to RAMSONY</h2><p class="muted">Type an idea or use your browser's voice dictation.</p>
+  <label for="chatInput">Your message</label><textarea id="chatInput" placeholder="Tell RAMSONY what you want help with..."></textarea>
+  <div class="actions"><button class="btn primary" id="dictate">🎙️ Start voice typing</button><button class="btn" id="stopDictate">Stop listening</button><button class="btn" id="copyChat">Copy text</button></div>
+  <div id="voiceStatus" class="status" aria-live="polite"></div>
+  <div class="notice">Voice typing converts speech into text. It does not clone or store your voice. AI chat replies will need a secure AI connection.</div>
 </section>
 
 <section id="music" class="tool panel">
-<h2>🎵 Music Studio</h2>
-<label for="songTitle">Song title</label><input id="songTitle" placeholder="I Was Born to Rise">
-<label for="lyrics">Lyrics</label><textarea id="lyrics" placeholder="Write your lyrics here..."></textarea>
-<label for="musicPrompt">Music style prompt</label><textarea id="musicPrompt" placeholder="Dark cinematic hip-hop, emotional male vocal, deep 808s, huge catchy chorus..."></textarea>
-<label for="audioFile">Preview an audio file from your device</label><input id="audioFile" type="file" accept="audio/*">
-<div id="audioPreview" class="preview">Your audio preview will appear here.</div>
-<div class="actions"><button class="btn" id="copyLyrics">Copy lyrics</button><button class="btn" id="saveSong">Save song draft</button></div><div id="musicStatus" class="status"></div>
-<p class="small">Music generation and song playback from text need a connected music-generation service. You can play an audio file you upload here.</p>
+  <h2>🎵 Music Studio</h2>
+  <label for="songTitle">Song title</label><input id="songTitle" placeholder="I Was Born to Rise">
+  <label for="lyrics">Lyrics</label><textarea id="lyrics" placeholder="Write your lyrics here..."></textarea>
+  <label for="songIdea">Describe the song you want help creating</label><textarea id="songIdea" placeholder="Example: a powerful, meaningful rap about loyalty, rising again and staying true..."></textarea>
+  <div class="row">
+    <div><label for="genre">Music style</label><select id="genre"><option>Radio hip-hop / R&B</option><option>Dark cinematic hip-hop</option><option>UK drill</option><option>Melodic rap</option><option>Pop</option><option>R&B soul</option><option>Acoustic</option><option>Custom style</option></select></div>
+    <div><label for="vocal">Vocal direction</label><select id="vocal"><option>Male vocal</option><option>Female vocal</option><option>Male and female duet</option><option>My own recorded vocal</option><option>Instrumental</option></select></div>
+  </div>
+  <label for="musicPrompt">Detailed music style prompt</label><textarea id="musicPrompt" placeholder="Dark cinematic hip-hop, emotional vocal, deep 808s, huge catchy chorus..."></textarea>
+  <div class="actions"><button class="btn" id="buildSongBrief">Build my song brief</button><button class="btn" id="copyLyrics">Copy lyrics</button><button class="btn primary" id="saveSong">Save song draft</button><button class="btn" id="remixSong">Create remix draft</button><button class="btn" id="downloadSong">Download song draft</button><button class="btn" id="shareSong">Share draft</button></div>
+  <div id="musicStatus" class="status" aria-live="polite"></div>
+  <label for="audioFile">Preview an audio file from your device</label><input id="audioFile" type="file" accept="audio/*">
+  <div id="audioPreview" class="preview">Your audio preview will appear here.</div>
+  <label for="ownVoice">Add your own recorded vocal (audio file)</label><input id="ownVoice" type="file" accept="audio/*">
+  <div id="ownVoicePreview" class="preview">Your recorded vocal preview will appear here.</div>
+  <div class="notice">The song brief helper organises your idea; it does not generate finished lyrics with an AI model yet. Uploading a vocal lets you preview your recording; voice cloning is not enabled.</div>
 </section>
 
 <section id="video" class="tool panel">
-<h2>🎬 Video Studio</h2>
-<label for="videoFile">Upload a video to preview</label><input id="videoFile" type="file" accept="video/*">
-<div id="videoPreview" class="preview">Your video preview will appear here.</div>
-<label for="videoBrief">Describe the video you want to create</label><textarea id="videoBrief" placeholder="Describe the scene, people, movement, mood, camera style and length..."></textarea>
-<label for="videoNotes">Editing notes</label><textarea id="videoNotes" placeholder="Add captions, music, transitions or trimming notes..."></textarea>
-<p class="small">This version previews uploaded videos and saves your creative brief. AI video generation and advanced editing need a connected video service/editor.</p>
+  <h2>🎬 Video Studio</h2>
+  <label for="videoFile">Upload a video to preview</label><input id="videoFile" type="file" accept="video/*">
+  <div id="videoPreview" class="preview">Your video preview will appear here.</div>
+  <label for="videoBrief">Describe the video you want to create</label><textarea id="videoBrief" placeholder="Describe the scene, people, movement, mood, camera style and length..."></textarea>
+  <label for="videoNotes">Editing notes</label><textarea id="videoNotes" placeholder="Add captions, music, transitions or trimming notes..."></textarea>
+  <div class="actions"><button class="btn" id="copyVideoBrief">Copy video brief</button><button class="btn" id="downloadVideoBrief">Download video brief</button></div>
+  <div id="videoStatus" class="status"></div>
+  <div class="notice">Video upload here is for preview. AI video generation and advanced editing need a connected video service/editor.</div>
 </section>
 
 <section id="photos" class="tool panel">
-<h2>🖼️ Two-photo Video Magic</h2>
-<p class="muted">Choose two photos to make a simple transition preview. Only use photos you have permission to use.</p>
-<div class="row">
-<div><label for="photoOne">Photo 1 — starting image</label><input id="photoOne" type="file" accept="image/*"></div>
-<div><label for="photoTwo">Photo 2 — ending image</label><input id="photoTwo" type="file" accept="image/*"></div>
-</div>
-<div class="photo-pair"><div><p class="small">PHOTO 1</p><img id="photoOneThumb" alt="First photo preview"></div><div><p class="small">PHOTO 2</p><img id="photoTwoThumb" alt="Second photo preview"></div></div>
-<label for="photoPrompt">What should happen in the video?</label><textarea id="photoPrompt" placeholder="Example: smoothly transition between the two photos with a gentle cinematic camera movement..."></textarea>
-<div class="row"><div><label for="duration">Preview duration</label><select id="duration"><option value="4">4 seconds</option><option value="6" selected>6 seconds</option><option value="8">8 seconds</option></select></div><div><label for="transition">Transition style</label><select id="transition"><option value="fade">Smooth fade</option><option value="cut">Quick cut</option></select></div></div>
-<div class="actions"><button class="btn primary" id="playSlideshow">▶ Preview transition</button><button class="btn" id="stopSlideshow">Stop</button></div>
-<div id="transitionStage" class="preview"><img id="stageOne" alt="First frame"><img id="stageTwo" alt="Second frame"></div>
-<div id="photoStatus" class="status" aria-live="polite"></div>
-<p class="small">This creates a local slideshow preview, not an AI-generated moving scene or downloadable video yet. AI animation between images requires a secure video-generation service.</p>
+  <h2>🖼️ Two-photo Video Magic</h2>
+  <p class="muted">Choose two photos to make a simple transition preview. Only use photos you have permission to use.</p>
+  <div class="row">
+    <div><label for="photoOne">Photo 1 — starting image</label><input id="photoOne" type="file" accept="image/*"></div>
+    <div><label for="photoTwo">Photo 2 — ending image</label><input id="photoTwo" type="file" accept="image/*"></div>
+  </div>
+  <div class="photo-pair"><div><p class="small">PHOTO 1</p><img id="photoOneThumb" alt="First photo preview"></div><div><p class="small">PHOTO 2</p><img id="photoTwoThumb" alt="Second photo preview"></div></div>
+  <label for="photoPrompt">What should happen in the video?</label><textarea id="photoPrompt" placeholder="Example: smoothly transition between the two photos with a gentle cinematic camera movement..."></textarea>
+  <div class="row"><div><label for="duration">Preview duration</label><select id="duration"><option value="4">4 seconds</option><option value="6" selected>6 seconds</option><option value="8">8 seconds</option></select></div><div><label for="transition">Transition style</label><select id="transition"><option value="fade">Smooth fade</option><option value="cut">Quick cut</option></select></div></div>
+  <div class="actions"><button class="btn primary" id="playSlideshow">▶ Preview transition</button><button class="btn" id="stopSlideshow">Stop</button></div>
+  <div id="transitionStage" class="preview"><img id="stageOne" alt="First frame"><img id="stageTwo" alt="Second frame"></div>
+  <div id="photoStatus" class="status" aria-live="polite"></div>
+  <div class="notice">This creates a local slideshow preview, not an AI-generated moving scene or downloadable video yet.</div>
 </section>
 
 <section id="images" class="tool panel">
-<h2>✨ Image Studio — Prompt Builder</h2>
-<label for="imagePrompt">Describe your image</label><textarea id="imagePrompt" placeholder="Example: black and electric-blue cinematic album cover with dramatic lighting..."></textarea>
-<label for="imageStyle">Style</label><select id="imageStyle"><option>Cinematic</option><option>Photorealistic</option><option>Illustration</option><option>Minimal logo</option><option>Vintage poster</option></select>
-<div class="actions"><button class="btn" id="copyImagePrompt">Copy image prompt</button></div><div id="imageStatus" class="status"></div>
-<p class="small">This builds prompts. Image generation will be added when a secure image service is connected.</p>
+  <h2>✨ Image Studio — Prompt Builder</h2>
+  <label for="imagePrompt">Describe your image</label><textarea id="imagePrompt" placeholder="Example: black and electric-blue cinematic album cover with dramatic lighting..."></textarea>
+  <label for="imageStyle">Style</label><select id="imageStyle"><option>Cinematic</option><option>Photorealistic</option><option>Illustration</option><option>Minimal logo</option><option>Vintage poster</option></select>
+  <div class="actions"><button class="btn" id="copyImagePrompt">Copy image prompt</button><button class="btn" id="downloadImagePrompt">Download prompt</button></div>
+  <div id="imageStatus" class="status"></div>
+  <div class="notice">This builds prompts. Image generation will be connected in a later version.</div>
 </section>
 
 <section id="notes" class="tool panel">
-<h2>📓 My Notebook</h2>
-<label for="noteText">Your private note</label><textarea id="noteText" placeholder="Save an idea, lyric, reminder or project note..."></textarea>
-<div class="actions"><button class="btn primary" id="saveNote">Save note on this device</button><button class="btn" id="clearNote">Clear box</button></div><div id="noteStatus" class="status"></div>
-<p class="small">Notes are stored in this browser on this device. They are not synced or password-protected. Avoid saving passwords or highly sensitive information here.</p>
+  <h2>📓 My Notebook</h2>
+  <label for="noteText">Your note</label><textarea id="noteText" placeholder="Save an idea, lyric, reminder or project note..."></textarea>
+  <div class="actions"><button class="btn primary" id="saveNote">Save note on this device</button><button class="btn" id="downloadNote">Download note</button><button class="btn" id="clearNote">Clear box</button></div>
+  <div id="noteStatus" class="status"></div>
+  <div class="notice">Notes are stored in this browser on this device. They are not synced or password-protected. Avoid saving passwords or highly sensitive information here.</div>
+</section>
+
+<section id="account" class="tool panel">
+  <h2>🔐 Account & Sharing</h2>
+  <p class="muted">Set your studio display name and label each draft as private or public.</p>
+  <label for="displayName">Display name</label><input id="displayName" placeholder="Your artist or creator name">
+  <div class="actions"><button class="btn primary" id="saveProfile">Save display name</button></div>
+  <div id="accountStatus" class="status"></div>
+  <hr>
+  <h3>Draft visibility</h3>
+  <label for="visibility">Choose a visibility label</label><select id="visibility"><option value="private">Private draft</option><option value="public">Public — ready to share</option></select>
+  <div class="notice">This setting is only a label saved in this browser. It does not publish or protect content online. Real accounts, sign-in and private cloud storage require secure authentication and a server.</div>
 </section>
 </main>
-<footer>RAMSONY AI® · Black & Electric Blue · Creative workspace</footer>
+<footer>RAMSONY AI® · BLACK & ELECTRIC BLUE · CREATIVE WORKSPACE</footer>
+
 <script>
 const $=id=>document.getElementById(id);
 function showTab(id){document.querySelectorAll('section.tool').forEach(s=>s.classList.toggle('active',s.id===id));document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.tab===id));window.scrollTo({top:0,behavior:'smooth'});}
 document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.tab)));
 document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.go)));
-function copyText(value,status){if(!value.trim()){status.textContent='Add some text first.';return;}navigator.clipboard?.writeText(value).then(()=>status.textContent='Copied!').catch(()=>status.textContent='Copy is not available in this browser.');}
+function copyText(value,status){if(!value.trim()){status.textContent='Add some text first.';return;}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(value).then(()=>status.textContent='Copied!').catch(()=>status.textContent='Copy failed. You can select and copy the text manually.');}else{status.textContent='Copy is unavailable here. You can select and copy the text manually.';}}
+function downloadText(filename,content){const blob=new Blob([content],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=filename;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 $('copyChat').onclick=()=>copyText($('chatInput').value,$('voiceStatus'));
 $('copyLyrics').onclick=()=>copyText($('lyrics').value,$('musicStatus'));
 $('copyImagePrompt').onclick=()=>copyText($('imagePrompt').value,$('imageStatus'));
-const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;
-$('dictate').onclick=()=>{if(!SpeechRecognition){$('voiceStatus').textContent='Voice typing is not supported in this browser. You can still type.';return;}const rec=new SpeechRecognition();rec.lang='en-AU';rec.interimResults=true;rec.onresult=e=>{let t='';for(let i=e.resultIndex;i<e.results.length;i++)t+=e.results[i][0].transcript;$('chatInput').value=t;};rec.onerror=()=> $('voiceStatus').textContent='Voice typing stopped. Check microphone permission.';rec.onend=()=> $('voiceStatus').textContent='Voice typing finished.';rec.start();$('voiceStatus').textContent='Listening…';};
-$('audioFile').onchange=e=>{const f=e.target.files[0];if(!f)return;const url=URL.createObjectURL(f);$('audioPreview').innerHTML='';const a=document.createElement('audio');a.controls=true;a.src=url;$('audioPreview').append(a);};
-$('videoFile').onchange=e=>{const f=e.target.files[0];if(!f)return;const v=document.createElement('video');v.controls=true;v.playsInline=true;v.src=URL.createObjectURL(f);$('videoPreview').innerHTML='';$('videoPreview').append(v);};
-$('saveSong').onclick=()=>{const data={title:$('songTitle').value,lyrics:$('lyrics').value,prompt:$('musicPrompt').value};localStorage.setItem('ramsony-song-draft',JSON.stringify(data));$('musicStatus').textContent='Song draft saved in this browser.';};
-$('saveNote').onclick=()=>{localStorage.setItem('ramsony-note',$('noteText').value);$('noteStatus').textContent='Note saved on this device.';};
-$('clearNote').onclick=()=>{$('noteText').value='';};
+const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;let recognition=null;
+$('dictate').onclick=()=>{if(!SpeechRecognition){$('voiceStatus').textContent='Voice typing is not supported in this browser. You can still type.';return;}recognition=new SpeechRecognition();recognition.lang='en-AU';recognition.interimResults=true;recognition.continuous=true;recognition.onresult=e=>{let t='';for(let i=0;i<e.results.length;i++)t+=e.results[i][0].transcript+' ';$('chatInput').value=t.trim();};recognition.onerror=()=> $('voiceStatus').textContent='Voice typing stopped. Check microphone permission.';recognition.onend=()=> $('voiceStatus').textContent='Voice typing finished.';recognition.start();$('voiceStatus').textContent='Listening…';};
+$('stopDictate').onclick=()=>{if(recognition)recognition.stop();};
+$('buildSongBrief').onclick=()=>{const idea=$('songIdea').value.trim();if(!idea){$('musicStatus').textContent='Describe your song idea first.';return;}const brief='SONG CREATION BRIEF\nTitle: '+($('songTitle').value||'Untitled')+'\nIdea: '+idea+'\nStyle: '+$('genre').value+'\nVocal direction: '+$('vocal').value+'\nMusic direction: '+$('musicPrompt').value+'\n\nPlease create original lyrics with a memorable hook, clear verses and a strong ending.';$('musicPrompt').value=brief;$('musicStatus').textContent='Your song brief is ready. Copy it into your chosen AI music tool.';};
+function songData(){return {title:$('songTitle').value,lyrics:$('lyrics').value,idea:$('songIdea').value,genre:$('genre').value,vocal:$('vocal').value,prompt:$('musicPrompt').value,visibility:$('visibility').value||'private'};}
+$('saveSong').onclick=()=>{localStorage.setItem('ramsony-song-draft',JSON.stringify(songData()));$('musicStatus').textContent='Song draft saved in this browser.';};
+$('remixSong').onclick=()=>{const d=songData();if(!d.title&&!d.lyrics&&!d.prompt){$('musicStatus').textContent='Add a title, lyrics or prompt before making a remix.';return;}d.title=(d.title||'Untitled')+' (Remix)';d.prompt=(d.prompt?d.prompt+'\n\n':'')+'Remix direction: create a fresh arrangement while keeping the central message and strongest hook.';$('songTitle').value=d.title;$('musicPrompt').value=d.prompt;$('musicStatus').textContent='Remix draft created. Edit it and save as a new version.';};
+$('downloadSong').onclick=()=>{const d=songData();downloadText((d.title||'ramsony-song').replace(/[^a-z0-9-_]+/gi,'-')+'.txt','RAMSONY AI® SONG DRAFT\n\nTitle: '+d.title+'\nStyle: '+d.genre+'\nVocal: '+d.vocal+'\n\nIDEA\n'+d.idea+'\n\nLYRICS\n'+d.lyrics+'\n\nMUSIC PROMPT\n'+d.prompt);$('musicStatus').textContent='Song draft download started.';};
+$('shareSong').onclick=async()=>{const d=songData();const content='RAMSONY AI® — '+d.title+'\n\n'+d.lyrics+'\n\n'+d.prompt;if(navigator.share){try{await navigator.share({title:d.title||'RAMSONY AI song draft',text:content});$('musicStatus').textContent='Share panel opened.';}catch(e){$('musicStatus').textContent='Sharing was cancelled or is unavailable.';}}else{copyText(content,$('musicStatus'));}};
+function attachMedia(inputId,containerId,type){$(inputId).onchange=e=>{const f=e.target.files[0];if(!f)return;const url=URL.createObjectURL(f);$(containerId).innerHTML='';const el=document.createElement(type);el.controls=true;if(type==='video'){el.playsInline=true;}el.src=url;$(containerId).append(el);};}
+attachMedia('audioFile','audioPreview','audio');attachMedia('ownVoice','ownVoicePreview','audio');attachMedia('videoFile','videoPreview','video');
+$('copyVideoBrief').onclick=()=>copyText('VIDEO IDEA\n'+$('videoBrief').value+'\n\nEDITING NOTES\n'+$('videoNotes').value,$('videoStatus'));
+$('downloadVideoBrief').onclick=()=>{downloadText('ramsony-video-brief.txt','VIDEO IDEA\n'+$('videoBrief').value+'\n\nEDITING NOTES\n'+$('videoNotes').value);$('videoStatus').textContent='Video brief download started.';};
+$('downloadImagePrompt').onclick=()=>{downloadText('ramsony-image-prompt.txt','Style: '+$('imageStyle').value+'\n\n'+$('imagePrompt').value);$('imageStatus').textContent='Image prompt download started.';};
+$('saveNote').onclick=()=>{localStorage.setItem('ramsony-note',$('noteText').value);$('noteStatus').textContent='Note saved in this browser.';};
+$('downloadNote').onclick=()=>{downloadText('ramsony-note.txt',$('noteText').value);$('noteStatus').textContent='Note download started.';};
+$('clearNote').onclick=()=>{$('noteText').value='';$('noteStatus').textContent='Text box cleared. Your saved note remains until you save again.';};
 $('noteText').value=localStorage.getItem('ramsony-note')||'';
-let urls=[null,null], timer=null;
-function setPhoto(i,file){if(!file)return;if(urls[i])URL.revokeObjectURL(urls[i]);urls[i]=URL.createObjectURL(file);$('photoOneThumb'.replace('photoOneThumb',i===0?'photoOneThumb':'photoTwoThumb')).src=urls[i];$('stageOne').src=urls[0]||'';$('stageTwo').src=urls[1]||'';$('photoStatus').textContent='Photo '+(i+1)+' loaded.';}
+$('saveProfile').onclick=()=>{localStorage.setItem('ramsony-display-name',$('displayName').value);$('accountStatus').textContent='Display name saved on this device.';};
+$('displayName').value=localStorage.getItem('ramsony-display-name')||'';
+$('visibility').value=localStorage.getItem('ramsony-visibility')||'private';
+$('visibility').onchange=()=>localStorage.setItem('ramsony-visibility',$('visibility').value);
+let urls=[null,null],timer=null;
+function setPhoto(i,file){if(!file)return;if(urls[i])URL.revokeObjectURL(urls[i]);urls[i]=URL.createObjectURL(file);$(i===0?'photoOneThumb':'photoTwoThumb').src=urls[i];if(urls[0])$('stageOne').src=urls[0];if(urls[1])$('stageTwo').src=urls[1];$('photoStatus').textContent='Photo '+(i+1)+' loaded.';}
 $('photoOne').onchange=e=>setPhoto(0,e.target.files[0]);$('photoTwo').onchange=e=>setPhoto(1,e.target.files[0]);
-$('playSlideshow').onclick=()=>{if(!urls[0]||!urls[1]){$('photoStatus').textContent='Please choose both photos first.';return;}clearInterval(timer);const a=$('stageOne'),b=$('stageTwo'),fade=$('transition').value==='fade';const ms=Number($('duration').value)*1000;let second=false;a.classList.add('show');b.classList.remove('show');if(!fade){a.style.transition='none';b.style.transition='none';}else{a.style.transition='opacity 1s';b.style.transition='opacity 1s';}timer=setInterval(()=>{second=!second;a.classList.toggle('show',!second);b.classList.toggle('show',second);},ms/2);$('photoStatus').textContent='Preview playing. This is a slideshow transition, not AI animation.';};
+$('playSlideshow').onclick=()=>{if(!urls[0]||!urls[1]){$('photoStatus').textContent='Please choose both photos first.';return;}clearInterval(timer);const a=$('stageOne'),b=$('stageTwo'),fade=$('transition').value==='fade';const ms=Number($('duration').value)*1000;a.classList.add('show');b.classList.remove('show');a.style.transition=fade?'opacity 1s':'none';b.style.transition=fade?'opacity 1s':'none';let second=false;timer=setInterval(()=>{second=!second;a.classList.toggle('show',!second);b.classList.toggle('show',second);},ms/2);$('photoStatus').textContent='Preview playing. This is a slideshow transition, not AI animation.';};
 $('stopSlideshow').onclick=()=>{clearInterval(timer);$('stageOne').classList.remove('show');$('stageTwo').classList.remove('show');$('photoStatus').textContent='Preview stopped.';};
-if('serviceWorker' in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
+if('serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
 </script>
-</body></html>
+</body>
+</html>
