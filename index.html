@@ -2,96 +2,147 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#07111f">
-<meta name="description" content="RAMSONY AI — your personal AI workspace">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#050812">
+<title>RAMSONY AI® — Creative Studio</title>
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" href="icon.svg" type="image/svg+xml">
-<title>RAMSONY AI®</title>
 <style>
-:root{color-scheme:dark;--bg:#07111f;--panel:#10243b;--panel2:#0b1a2b;--blue:#38bdf8;--muted:#a8bfd4}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#102b49,var(--bg) 55%);color:#f4f9ff;font:16px system-ui,sans-serif}
-main{max-width:760px;margin:auto;padding:22px 16px 48px}.brand{text-align:center;padding:26px 12px 20px}
-.logo{width:78px;height:78px;margin:auto auto 12px;border:2px solid var(--blue);border-radius:24px;display:grid;place-items:center;color:var(--blue);font-size:28px;font-weight:900;box-shadow:0 0 30px #38bdf855}
-h1{margin:0;color:var(--blue);letter-spacing:2px;font-size:clamp(28px,7vw,42px)}.tag{color:var(--muted);font-size:12px;letter-spacing:2px;margin-top:7px}
-.panel{background:#10243bdd;border:1px solid #244767;border-radius:18px;padding:16px;margin:14px 0;box-shadow:0 10px 30px #0003}
-h2{font-size:18px;margin:0 0 12px}.muted{color:var(--muted);font-size:13px}
-textarea,input{width:100%;background:#071727;border:1px solid #31516f;color:white;border-radius:12px;padding:13px;font:inherit}
-textarea{min-height:120px;resize:vertical}button{background:var(--blue);color:#03111e;border:0;border-radius:12px;padding:12px 15px;font-weight:750;font-size:14px;cursor:pointer}
-button.secondary{background:#183653;color:#eaf7ff;border:1px solid #31516f}button:disabled{opacity:.5}
-.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:10px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.tile{background:#0b1a2b;border:1px solid #244767;border-radius:14px;padding:14px;text-align:left;color:white}
-.tile b{display:block;margin-bottom:4px}.status{display:inline-flex;align-items:center;gap:7px;border-radius:99px;padding:7px 11px;background:#0b1a2b;color:var(--muted);font-size:12px}
-#savedList{padding-left:18px}li{margin:7px 0;overflow-wrap:anywhere}.foot{text-align:center;color:#7895ae;font-size:12px;margin-top:26px}
-@media(max-width:420px){.grid{grid-template-columns:1fr}}
+:root{--bg:#050812;--panel:#0b1425;--panel2:#101d33;--blue:#168cff;--cyan:#35d9ff;--text:#eef6ff;--muted:#9aadc6;--line:#1b3555}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#10264a 0,#050812 48%);color:var(--text);font:16px/1.5 system-ui,Arial,sans-serif}
+header{padding:22px 18px 16px;text-align:center;border-bottom:1px solid var(--line);background:#050812cc;position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}
+.brand{font-weight:900;letter-spacing:2px;font-size:clamp(25px,5vw,38px);text-shadow:0 0 22px #168cff88}.brand span{color:var(--cyan)}
+header p{margin:4px 0 0;color:var(--muted);font-size:13px}
+nav{display:flex;gap:8px;overflow:auto;padding:12px;max-width:1100px;margin:auto}
+nav button,.btn{border:1px solid #245080;background:#0b1b32;color:var(--text);border-radius:12px;padding:10px 14px;font-weight:700;cursor:pointer;white-space:nowrap}
+nav button.active,.btn.primary{background:linear-gradient(100deg,#0875e8,#08b9e8);border-color:#39bfff;color:white}
+main{max-width:1100px;margin:auto;padding:14px}
+.hero{padding:24px 20px;border:1px solid #17477a;border-radius:20px;background:linear-gradient(130deg,#0b1c35,#07101f 70%);box-shadow:0 12px 45px #0008}
+h1{font-size:clamp(25px,5vw,38px);line-height:1.15;margin:0 0 8px}.glow{color:var(--cyan)}.muted{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:16px}
+.card,.panel{background:linear-gradient(145deg,#0d1a2d,#08111f);border:1px solid var(--line);border-radius:18px;padding:17px}
+.card h3{margin:4px 0}.card p{margin:4px 0 12px;color:var(--muted);font-size:14px}
+section.tool{display:none;margin-top:16px}section.tool.active{display:block}
+label{display:block;font-weight:700;margin:12px 0 6px}input,textarea,select{width:100%;padding:12px;border:1px solid #294665;border-radius:11px;background:#050d19;color:var(--text);font:inherit}
+textarea{min-height:100px;resize:vertical}input[type=file]{padding:9px}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:13px}
+.preview{margin-top:14px;padding:12px;border:1px dashed #2a5c8c;border-radius:14px;background:#050d19;min-height:70px}
+img.preview-img,video,audio{max-width:100%;border-radius:12px;margin-top:8px}
+.photo-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.photo-pair img{width:100%;aspect-ratio:4/3;object-fit:cover;background:#101d33;border-radius:12px}
+#transitionStage{position:relative;overflow:hidden;border-radius:14px;background:#02050a;aspect-ratio:16/9}
+#transitionStage img{position:absolute;width:100%;height:100%;object-fit:contain;inset:0;opacity:0;transition:opacity 1s}
+#transitionStage img.show{opacity:1}
+.small{font-size:12px;color:var(--muted)}.status{color:#83e6ff;margin-top:8px;min-height:24px}
+footer{text-align:center;color:var(--muted);padding:30px 12px;font-size:12px}
+hr{border:0;border-top:1px solid var(--line);margin:18px 0}
+@media(max-width:520px){header{position:static}.photo-pair{grid-template-columns:1fr 1fr}main{padding:10px}}
 </style>
 </head>
-<body><main>
-<header class="brand">
-<div class="logo">RA</div>
-<h1>RAMSONY AI®</h1><div class="tag">YOUR PERSONAL AI WORKSPACE</div>
-<p class="muted">Voice first. Typing always available.</p>
-<span class="status" id="connection">● Checking connection…</span>
-</header>
-
-<section class="panel">
-<h2>Talk or type to your assistant</h2>
-<p class="muted">Voice dictation availability depends on your browser. The assistant connection will be added securely in a later setup step.</p>
-<textarea id="prompt" placeholder="Tell RAMSONY AI what you need…"></textarea>
-<div class="actions">
-<button id="mic">🎙️ Dictate</button>
-<button id="send">Send request</button>
-<button class="secondary" id="clearPrompt">Clear</button>
+<body>
+<header><div class="brand">RAMSONY <span>AI®</span></div><p>YOUR VOICE. YOUR IDEAS. YOUR CREATIVE STUDIO.</p></header>
+<nav aria-label="Studio sections">
+<button class="active" data-tab="home">Home</button><button data-tab="assistant">Voice AI</button><button data-tab="music">Music</button><button data-tab="video">Video Studio</button><button data-tab="photos">Two-photo video</button><button data-tab="images">Image ideas</button><button data-tab="notes">Notebook</button>
+</nav>
+<main>
+<div class="hero">
+<h1>Make something <span class="glow">extraordinary.</span></h1>
+<p class="muted">A voice-first creative space for songs, videos, images and ideas.</p>
+<div class="actions"><button class="btn primary" data-go="assistant">Talk to RAMSONY</button><button class="btn" data-go="photos">Create a two-photo video</button></div>
 </div>
-<p class="muted" id="voiceStatus" aria-live="polite"></p>
-<div id="reply" class="muted" aria-live="polite"></div>
-</section>
-
-<section class="panel">
-<h2>Your workspace</h2>
+<section id="home" class="tool active">
 <div class="grid">
-<button class="tile" data-template="Music Studio">🎵 <b>Music Studio</b><span class="muted">Lyrics and song ideas</span></button>
-<button class="tile" data-template="Image Creator">🖼️ <b>Image Creator</b><span class="muted">Save visual concepts</span></button>
-<button class="tile" data-template="Video Studio">🎬 <b>Video Studio</b><span class="muted">Video plans and scenes</span></button>
-<button class="tile" data-template="Research">🔎 <b>Research</b><span class="muted">Questions to explore online</span></button>
+<div class="card"><h3>🎙️ Voice AI</h3><p>Speak or type your ideas. Dictation works where your browser supports it.</p><button class="btn" data-go="assistant">Open Voice AI</button></div>
+<div class="card"><h3>🎵 Music Studio</h3><p>Write lyrics, add a music prompt, and preview audio files you already have.</p><button class="btn" data-go="music">Open Music</button></div>
+<div class="card"><h3>🎬 Video Studio</h3><p>Preview your own video and keep a brief for an AI video service.</p><button class="btn" data-go="video">Open Video</button></div>
+<div class="card"><h3>🖼️ Two-photo video</h3><p>Choose two photos and preview a simple transition slideshow.</p><button class="btn" data-go="photos">Open Two-photo Video</button></div>
+<div class="card"><h3>✨ Image ideas</h3><p>Write a prompt for cover art, posters, logos and visual concepts.</p><button class="btn" data-go="images">Open Image Ideas</button></div>
+<div class="card"><h3>📓 Notebook</h3><p>Save notes on this device in this browser.</p><button class="btn" data-go="notes">Open Notebook</button></div>
 </div>
+<p class="small">Current version: creative workspace and local previews. Real AI generation requires secure service connections and is not active yet.</p>
 </section>
 
-<section class="panel">
-<h2>Offline notebook</h2>
-<p class="muted">Notes are saved on this device and remain available without internet.</p>
-<input id="noteTitle" placeholder="Note title">
-<textarea id="noteBody" placeholder="Write lyrics, ideas, reminders or drafts…"></textarea>
-<div class="actions"><button id="saveNote">Save note on this device</button><button class="secondary" id="exportNotes">Export notes</button></div>
-<ul id="savedList"></ul>
+<section id="assistant" class="tool panel">
+<h2>🎙️ Talk to RAMSONY</h2><p class="muted">Type a message or use voice dictation to put your words in the box.</p>
+<label for="chatInput">Your message</label><textarea id="chatInput" placeholder="Tell RAMSONY what you want help with..."></textarea>
+<div class="actions"><button class="btn primary" id="dictate">🎙️ Start voice typing</button><button class="btn" id="copyChat">Copy text</button></div><div id="voiceStatus" class="status" aria-live="polite"></div>
+<p class="small">This starter version does not send messages to an AI service yet.</p>
 </section>
 
-<p class="foot">RAMSONY AI® • Private workspace on this device</p>
+<section id="music" class="tool panel">
+<h2>🎵 Music Studio</h2>
+<label for="songTitle">Song title</label><input id="songTitle" placeholder="I Was Born to Rise">
+<label for="lyrics">Lyrics</label><textarea id="lyrics" placeholder="Write your lyrics here..."></textarea>
+<label for="musicPrompt">Music style prompt</label><textarea id="musicPrompt" placeholder="Dark cinematic hip-hop, emotional male vocal, deep 808s, huge catchy chorus..."></textarea>
+<label for="audioFile">Preview an audio file from your device</label><input id="audioFile" type="file" accept="audio/*">
+<div id="audioPreview" class="preview">Your audio preview will appear here.</div>
+<div class="actions"><button class="btn" id="copyLyrics">Copy lyrics</button><button class="btn" id="saveSong">Save song draft</button></div><div id="musicStatus" class="status"></div>
+<p class="small">Music generation and song playback from text need a connected music-generation service. You can play an audio file you upload here.</p>
+</section>
+
+<section id="video" class="tool panel">
+<h2>🎬 Video Studio</h2>
+<label for="videoFile">Upload a video to preview</label><input id="videoFile" type="file" accept="video/*">
+<div id="videoPreview" class="preview">Your video preview will appear here.</div>
+<label for="videoBrief">Describe the video you want to create</label><textarea id="videoBrief" placeholder="Describe the scene, people, movement, mood, camera style and length..."></textarea>
+<label for="videoNotes">Editing notes</label><textarea id="videoNotes" placeholder="Add captions, music, transitions or trimming notes..."></textarea>
+<p class="small">This version previews uploaded videos and saves your creative brief. AI video generation and advanced editing need a connected video service/editor.</p>
+</section>
+
+<section id="photos" class="tool panel">
+<h2>🖼️ Two-photo Video Magic</h2>
+<p class="muted">Choose two photos to make a simple transition preview. Only use photos you have permission to use.</p>
+<div class="row">
+<div><label for="photoOne">Photo 1 — starting image</label><input id="photoOne" type="file" accept="image/*"></div>
+<div><label for="photoTwo">Photo 2 — ending image</label><input id="photoTwo" type="file" accept="image/*"></div>
+</div>
+<div class="photo-pair"><div><p class="small">PHOTO 1</p><img id="photoOneThumb" alt="First photo preview"></div><div><p class="small">PHOTO 2</p><img id="photoTwoThumb" alt="Second photo preview"></div></div>
+<label for="photoPrompt">What should happen in the video?</label><textarea id="photoPrompt" placeholder="Example: smoothly transition between the two photos with a gentle cinematic camera movement..."></textarea>
+<div class="row"><div><label for="duration">Preview duration</label><select id="duration"><option value="4">4 seconds</option><option value="6" selected>6 seconds</option><option value="8">8 seconds</option></select></div><div><label for="transition">Transition style</label><select id="transition"><option value="fade">Smooth fade</option><option value="cut">Quick cut</option></select></div></div>
+<div class="actions"><button class="btn primary" id="playSlideshow">▶ Preview transition</button><button class="btn" id="stopSlideshow">Stop</button></div>
+<div id="transitionStage" class="preview"><img id="stageOne" alt="First frame"><img id="stageTwo" alt="Second frame"></div>
+<div id="photoStatus" class="status" aria-live="polite"></div>
+<p class="small">This creates a local slideshow preview, not an AI-generated moving scene or downloadable video yet. AI animation between images requires a secure video-generation service.</p>
+</section>
+
+<section id="images" class="tool panel">
+<h2>✨ Image Studio — Prompt Builder</h2>
+<label for="imagePrompt">Describe your image</label><textarea id="imagePrompt" placeholder="Example: black and electric-blue cinematic album cover with dramatic lighting..."></textarea>
+<label for="imageStyle">Style</label><select id="imageStyle"><option>Cinematic</option><option>Photorealistic</option><option>Illustration</option><option>Minimal logo</option><option>Vintage poster</option></select>
+<div class="actions"><button class="btn" id="copyImagePrompt">Copy image prompt</button></div><div id="imageStatus" class="status"></div>
+<p class="small">This builds prompts. Image generation will be added when a secure image service is connected.</p>
+</section>
+
+<section id="notes" class="tool panel">
+<h2>📓 My Notebook</h2>
+<label for="noteText">Your private note</label><textarea id="noteText" placeholder="Save an idea, lyric, reminder or project note..."></textarea>
+<div class="actions"><button class="btn primary" id="saveNote">Save note on this device</button><button class="btn" id="clearNote">Clear box</button></div><div id="noteStatus" class="status"></div>
+<p class="small">Notes are stored in this browser on this device. They are not synced or password-protected. Avoid saving passwords or highly sensitive information here.</p>
+</section>
 </main>
+<footer>RAMSONY AI® · Black & Electric Blue · Creative workspace</footer>
 <script>
 const $=id=>document.getElementById(id);
-const storeKey='ramsony-ai-notes-v1';
-let notes=JSON.parse(localStorage.getItem(storeKey)||'[]');
-function renderNotes(){
- $('savedList').innerHTML='';
- notes.forEach((n,i)=>{const li=document.createElement('li');const strong=document.createElement('strong');strong.textContent=n.title||'Untitled';const p=document.createElement('div');p.textContent=n.body;const del=document.createElement('button');del.className='secondary';del.textContent='Delete';del.onclick=()=>{notes.splice(i,1);persist();};li.append(strong,p,del);$('savedList').append(li);});
-}
-function persist(){localStorage.setItem(storeKey,JSON.stringify(notes));renderNotes();}
-function connection(){ $('connection').textContent=navigator.onLine?'● Online — internet available':'● Offline — local notebook available';}
-window.addEventListener('online',connection);window.addEventListener('offline',connection);connection();renderNotes();
-$('saveNote').onclick=()=>{const body=$('noteBody').value.trim();if(!body)return;notes.unshift({title:$('noteTitle').value.trim(),body,created:new Date().toISOString()});persist();$('noteTitle').value='';$('noteBody').value='';};
-$('clearPrompt').onclick=()=>{$('prompt').value='';$('reply').textContent='';};
-$('send').onclick=()=>{$('reply').textContent='Your request is ready. The secure online AI connection still needs to be configured; no request has been sent.';};
-document.querySelectorAll('[data-template]').forEach(b=>b.onclick=()=>{$('noteTitle').value=b.dataset.template;$('noteBody').focus();});
-$('exportNotes').onclick=()=>{const blob=new Blob([JSON.stringify(notes,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='ramsony-ai-notes.json';a.click();URL.revokeObjectURL(a.href);};
-$('mic').onclick=()=>{
- const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
- if(!SR){$('voiceStatus').textContent='Voice dictation is not supported in this browser. You can still type, or use your phone keyboard microphone.';return;}
- const rec=new SR();rec.lang='en-AU';rec.interimResults=false;
- $('voiceStatus').textContent='Listening…';rec.onresult=e=>{$('prompt').value+=( $('prompt').value?' ':'')+e.results[0][0].transcript;$('voiceStatus').textContent='Voice captured. You can edit it before sending.';};
- rec.onerror=()=>{$('voiceStatus').textContent='Could not access voice input. Check microphone permission.';};
- rec.onend=()=>{};rec.start();
-};
-if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
+function showTab(id){document.querySelectorAll('section.tool').forEach(s=>s.classList.toggle('active',s.id===id));document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.tab===id));window.scrollTo({top:0,behavior:'smooth'});}
+document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.tab)));
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.go)));
+function copyText(value,status){if(!value.trim()){status.textContent='Add some text first.';return;}navigator.clipboard?.writeText(value).then(()=>status.textContent='Copied!').catch(()=>status.textContent='Copy is not available in this browser.');}
+$('copyChat').onclick=()=>copyText($('chatInput').value,$('voiceStatus'));
+$('copyLyrics').onclick=()=>copyText($('lyrics').value,$('musicStatus'));
+$('copyImagePrompt').onclick=()=>copyText($('imagePrompt').value,$('imageStatus'));
+const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;
+$('dictate').onclick=()=>{if(!SpeechRecognition){$('voiceStatus').textContent='Voice typing is not supported in this browser. You can still type.';return;}const rec=new SpeechRecognition();rec.lang='en-AU';rec.interimResults=true;rec.onresult=e=>{let t='';for(let i=e.resultIndex;i<e.results.length;i++)t+=e.results[i][0].transcript;$('chatInput').value=t;};rec.onerror=()=> $('voiceStatus').textContent='Voice typing stopped. Check microphone permission.';rec.onend=()=> $('voiceStatus').textContent='Voice typing finished.';rec.start();$('voiceStatus').textContent='Listening…';};
+$('audioFile').onchange=e=>{const f=e.target.files[0];if(!f)return;const url=URL.createObjectURL(f);$('audioPreview').innerHTML='';const a=document.createElement('audio');a.controls=true;a.src=url;$('audioPreview').append(a);};
+$('videoFile').onchange=e=>{const f=e.target.files[0];if(!f)return;const v=document.createElement('video');v.controls=true;v.playsInline=true;v.src=URL.createObjectURL(f);$('videoPreview').innerHTML='';$('videoPreview').append(v);};
+$('saveSong').onclick=()=>{const data={title:$('songTitle').value,lyrics:$('lyrics').value,prompt:$('musicPrompt').value};localStorage.setItem('ramsony-song-draft',JSON.stringify(data));$('musicStatus').textContent='Song draft saved in this browser.';};
+$('saveNote').onclick=()=>{localStorage.setItem('ramsony-note',$('noteText').value);$('noteStatus').textContent='Note saved on this device.';};
+$('clearNote').onclick=()=>{$('noteText').value='';};
+$('noteText').value=localStorage.getItem('ramsony-note')||'';
+let urls=[null,null], timer=null;
+function setPhoto(i,file){if(!file)return;if(urls[i])URL.revokeObjectURL(urls[i]);urls[i]=URL.createObjectURL(file);$('photoOneThumb'.replace('photoOneThumb',i===0?'photoOneThumb':'photoTwoThumb')).src=urls[i];$('stageOne').src=urls[0]||'';$('stageTwo').src=urls[1]||'';$('photoStatus').textContent='Photo '+(i+1)+' loaded.';}
+$('photoOne').onchange=e=>setPhoto(0,e.target.files[0]);$('photoTwo').onchange=e=>setPhoto(1,e.target.files[0]);
+$('playSlideshow').onclick=()=>{if(!urls[0]||!urls[1]){$('photoStatus').textContent='Please choose both photos first.';return;}clearInterval(timer);const a=$('stageOne'),b=$('stageTwo'),fade=$('transition').value==='fade';const ms=Number($('duration').value)*1000;let second=false;a.classList.add('show');b.classList.remove('show');if(!fade){a.style.transition='none';b.style.transition='none';}else{a.style.transition='opacity 1s';b.style.transition='opacity 1s';}timer=setInterval(()=>{second=!second;a.classList.toggle('show',!second);b.classList.toggle('show',second);},ms/2);$('photoStatus').textContent='Preview playing. This is a slideshow transition, not AI animation.';};
+$('stopSlideshow').onclick=()=>{clearInterval(timer);$('stageOne').classList.remove('show');$('stageTwo').classList.remove('show');$('photoStatus').textContent='Preview stopped.';};
+if('serviceWorker' in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
 </script>
 </body></html>
